@@ -1,0 +1,36 @@
+body {
+  font-family: open sans, sans-serif;
+  letter-spacing: 0.1em;
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.header {
+  background-color: gray;
+}
+
+.header-navigation {
+}
+
+.header-logo {
+}
+
+.header-item {
+}
+.header-link {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+.header-phone {
+}
+.header-btn {
+}
