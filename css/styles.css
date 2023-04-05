@@ -45,6 +45,10 @@ body {
   text-decoration: none;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -63,7 +67,6 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
-  outline: 2px solid red;
 }
 
 .btn {
@@ -79,6 +82,12 @@ body {
   border: 1px solid #ff6c00;
   border-radius: 25px;
   background-color: transparent;
+  transition: background-color 300ms linear, color 300ms linear;
+}
+
+.btn:is(:hover, :focus) {
+  background-color: #ff6c00;
+  color: #ffffff;
 }
 
 .title {
@@ -115,7 +124,8 @@ body {
 /** -----------------------HEADER---------------------- */
 
 .header {
-  background-color: gray;
+  position: absolute;
+  width: 100%;
   padding-top: 32px;
 }
 
@@ -152,6 +162,7 @@ body {
   line-height: 1.33;
   letter-spacing: 0.1em;
   color: #ffffff;
+  transition: color 300ms linear;
 }
 
 .header-link:is(:hover, :focus) {
@@ -169,6 +180,21 @@ body {
 }
 .header-btn {
   color: #ffffff;
+}
+
+.current {
+  position: relative;
+}
+
+.current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -52px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #ff6c00;
 }
 
 /** -----------------------HERO---------------------- */
@@ -189,8 +215,27 @@ body {
   flex-grow: 1;
   padding: 272px 100px 208px 100px;
 }
-.hero-list {
+
+.hero-soc {
   width: 100px;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 27px;
+  padding-bottom: 40px;
+}
+.hero-list {
+  display: flex;
+  align-items: center;
+  transform: rotate(-90deg) translateY(100%);
+  transform-origin: bottom left;
+  gap: 40px;
+}
+
+.hero-list::before {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background-color: #303030;
 }
 
 .hero-item {
@@ -407,6 +452,7 @@ body {
   height: 133px;
   padding: 20px 24px;
   background-color: #f7f7f7;
+  position: relative;
 }
 
 .benefits-item .count {
@@ -477,6 +523,29 @@ body {
 .barbers-item {
   width: calc((100% - 60px) / 3);
 }
+.barbers-item:hover .barbers-cover-text {
+  transform: translate(0);
+}
+
+.barbers-cover-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.barbers-cover-text {
+  position: absolute;
+  top: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #ff6c00;
+  padding: 40px;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 300ms linear;
+  overflow: auto;
+}
+
 .barbers-subtitle {
   font-weight: 400;
   font-size: 18px;
@@ -521,16 +590,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  fill: #ffffff;
+  color: #ffffff;
+  /* fill: #ffffff; */
+  transition: background-color 300ms linear, color 300ms linear;
 }
 
-/* .barbers-soc-icon {
+.barbers-soc-icon {
   fill: currentColor;
-} */
+}
 
 .barbers-soc-link:hover {
   background-color: teal;
-  fill: violet;
+  color: violet;
 }
 
 /* .barbers-soc-link:hover {
@@ -553,4 +624,46 @@ body {
 
 .gallery-list li {
   flex-basis: calc((100% - 90px) / 4);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(23, 26, 36, 0.432);
+  transition: opacity 300ms linear, visibility 300ms linear;
+}
+
+.modal {
+  width: 500px;
+  min-height: 500px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+  transition: transform 300ms linear;
+  padding: 20px;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scaleY(0) rotate(-90deg);
+}
+
+.modal-close-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #999999;
+  background-color: transparent;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
