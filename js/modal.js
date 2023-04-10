@@ -12,12 +12,12 @@
 
   //* Закривання по кліку на бекдроп
 
-  // refs.modal.addEventListener('click', removeModal);
-  // function removeModal(e) {
-  //   if (e.target === e.currentTarget) {
-  //     refs.modal.classList.add('is-hidden');
-  //   }
-  // }
+  refs.modal.addEventListener('click', removeModal);
+  function removeModal(e) {
+    if (e.target === e.currentTarget) {
+      refs.modal.classList.add('is-hidden');
+    }
+  }
 
   function toggleModal() {
     refs.modal.classList.toggle('is-hidden');
