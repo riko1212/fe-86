@@ -355,31 +355,69 @@
           <div class="container"></div>
         </div>
       </section>
-      <section>
-        <h2>Online-booking</h2>
-      </section>
-      <section>
-        <h2>Contacts</h2>
-        <address>
-          <ul>
-            <li>
-              <a
-                href="https://goo.gl/maps/488Sy1855LLvMbea7"
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                >st. Vasilkivska, 7A<br />
-                Kyiv, 08132</a
-              >
-            </li>
-            <li><a href="tel:+380441111111">+38 044 111 11 11</a></li>
-            <li>
-              <a href="mailto:barbershop@email.com">barbershop@email.com</a>
-            </li>
-          </ul>
-        </address>
-        <h3>Working hours</h3>
-        <p>Every day from 9:00 to 22:00</p>
-      </section>
+      <div class="contact-wrap">
+        <div class="container">
+          <section class="online">
+            <h2 class="online-title title">Online-booking</h2>
+            <form class="online-form">
+              <div class="online-field">
+                <input
+                  class="online-input online-item"
+                  id="online-name"
+                  name="online-name"
+                  type="text"
+                  required
+                  placeholder=" "
+                />
+                <label class="online-label" for="online-name">Name*</label>
+              </div>
+              <div class="online-field">
+                <input
+                  class="online-input online-item"
+                  id="online-tel"
+                  name="online-tel"
+                  type="tel"
+                  required
+                  placeholder=" "
+                />
+                <label class="online-label" for="online-tel">Phone*</label>
+              </div>
+              <div class="online-field textarea-field">
+                <textarea
+                  class="online-text online-item"
+                  id="online-text"
+                  name="online-text"
+                  placeholder=" "
+                ></textarea>
+                <label class="online-label" for="online-text">Message</label>
+              </div>
+              <button type="submit" class="btn online-btn">Send</button>
+            </form>
+          </section>
+          <section class="contacts">
+            <h2 class="contacts-title title">Contacts</h2>
+            <address>
+              <ul>
+                <li>
+                  <a
+                    href="https://goo.gl/maps/488Sy1855LLvMbea7"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    >st. Vasilkivska, 7A<br />
+                    Kyiv, 08132</a
+                  >
+                </li>
+                <li><a href="tel:+380441111111">+38 044 111 11 11</a></li>
+                <li>
+                  <a href="mailto:barbershop@email.com">barbershop@email.com</a>
+                </li>
+              </ul>
+            </address>
+            <h3>Working hours</h3>
+            <p>Every day from 9:00 to 22:00</p>
+          </section>
+        </div>
+      </div>
     </main>
     <footer>
       <p>&copy;Copyright 2020</p>
@@ -396,7 +434,7 @@
         </li>
       </ul>
     </footer>
-    <div class="backdrop" data-modal>
+    <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="modal-close-btn" data-modal-close type="button">
           X
@@ -450,19 +488,22 @@
             ></textarea>
           </div>
           <div class="modal-field">
-            <label class="input-text" for="user-city">Enter city</label>
-            <div class="input-wrap">
-              <select
-                class="modal-input"
-                id="user-city"
-                multiple
-                name="user-city"
-              >
-                <option value="london">London</option>
-                <option value="paris" selected>Paris</option>
-                <option value="noviy-rozdil">Noviy Rozdil</option>
-              </select>
-            </div>
+            <input
+              class="input-check visually-hidden"
+              id="privacy"
+              name="privacy"
+              type="checkbox"
+              value="true
+            "
+            />
+            <label class="check-text" for="privacy">
+              <span>
+                <svg class="check-icon" width="10" height="8">
+                  <use href="./images/icons.svg#icon-check"></use>
+                </svg>
+              </span>
+              Privacy policy <a href="">agree</a></label
+            >
           </div>
           <button type="submit">Send</button>
         </form>
