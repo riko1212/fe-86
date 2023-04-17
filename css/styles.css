@@ -31,6 +31,9 @@ address {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
+  width: 100%;
 }
 
 body {
@@ -63,7 +66,7 @@ body {
 }
 
 .container {
-  width: 1200px;
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
@@ -117,8 +120,10 @@ body {
   margin-right: 20px; */
 }
 .section {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  /* padding-top: 120px;
+  padding-bottom: 120px; */
+  padding-top: 84px;
+  padding-bottom: 84px;
 }
 
 /** -----------------------HEADER---------------------- */
@@ -503,8 +508,6 @@ body {
 
 /** -----------------------BARBERS---------------------- */
 
-.barbers {
-}
 .barbers-top-text {
   color: #303030;
   margin-bottom: 20px;
@@ -517,11 +520,13 @@ body {
 
 .barbers-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
 }
 
 .barbers-item {
-  width: calc((100% - 60px) / 3);
+  /* width: calc((100% - 60px) / 3); */
+  width: 100%;
 }
 .barbers-item:hover .barbers-cover-text {
   transform: translate(0);
@@ -614,16 +619,22 @@ body {
 
 /** -----------------------GALLERY---------------------- */
 
+.gallery-top-text {
+  /* margin-bottom: 44px; */
+  margin-bottom: 71px;
+}
+
 .gallery-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px 30px;
+  gap: 30px;
   /* row-gap: 50px;
   column-gap: 30px; */
 }
 
 .gallery-list li {
-  flex-basis: calc((100% - 90px) / 4);
+  /* flex-basis: calc((100% - 90px) / 4); */
+  flex-basis: 100%;
 }
 
 .contact-wrap {
