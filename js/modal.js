@@ -16,6 +16,7 @@
   function removeModal(e) {
     if (e.target === e.currentTarget) {
       refs.modal.classList.add('is-hidden');
+      document.body.classList.remove('no-scroll');
     }
   }
 
